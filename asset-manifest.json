@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/NxtTrendz/static/css/main.f28bbfce.css",
+    "main.js": "/NxtTrendz/static/js/main.383eca93.js",
+    "static/js/453.79b294ce.chunk.js": "/NxtTrendz/static/js/453.79b294ce.chunk.js",
+    "index.html": "/NxtTrendz/index.html",
+    "main.f28bbfce.css.map": "/NxtTrendz/static/css/main.f28bbfce.css.map",
+    "main.383eca93.js.map": "/NxtTrendz/static/js/main.383eca93.js.map",
+    "453.79b294ce.chunk.js.map": "/NxtTrendz/static/js/453.79b294ce.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f28bbfce.css",
+    "static/js/main.383eca93.js"
+  ]
+}
