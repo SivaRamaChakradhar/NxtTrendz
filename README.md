@@ -1,70 +1,174 @@
-# Getting Started with Create React App
+# Nxt Trendz - E-Commerce Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Nxt Trendz is a modern React-based e-commerce application that allows users to browse products, view exclusive prime deals, filter items, manage a shopping cart, and make purchases with an intuitive user interface.
+
+## Features
+
+- **User Authentication**: Secure login system with JWT token-based authentication
+- **Product Browsing**: Browse through a wide variety of products with detailed information
+- **Product Filtering**: Filter products by category, price range, and ratings
+- **Prime Deals**: Exclusive deals section for prime members
+- **Shopping Cart**: Add/remove items, manage quantities, and view cart summary
+- **Product Details**: View comprehensive product information with similar product recommendations
+- **Responsive Design**: Fully responsive UI that works seamlessly on desktop and mobile devices
+- **Context API State Management**: Efficient state management for cart operations
+
+## Tech Stack
+
+- **Frontend**: React.js with Hooks and Context API
+- **Routing**: React Router v6
+- **Styling**: CSS3
+- **HTTP Client**: Fetch API
+- **State Management**: React Context API
+- **Icons**: React Icons (Bootstrap)
+- **Loading Spinner**: react-loader-spinner
+- **Authentication**: JWT tokens with js-cookie
+
+## Installation
+
+1. Clone the repository:
+```bash
+git clone <repository-url>
+cd nxt-trendz
+```
+
+2. Install dependencies:
+```bash
+npm install
+```
+
+3. Install additional packages:
+```bash
+npm install js-cookie react-loader-spinner react-icons --legacy-peer-deps
+```
 
 ## Available Scripts
 
-In the project directory, you can run:
-
 ### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Runs the app in development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.\
+The page will reload when you make changes.
 
 ### `npm test`
-
-Launches the test runner in the interactive watch mode.\
+Launches the test runner in interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
 ### `npm run build`
-
 Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+It correctly bundles React in production mode and optimizes the build for best performance.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Project Structure
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+src/
+├── components/
+│   ├── Header/                    # Navigation header with logout
+│   ├── Home/                      # Homepage with hero section
+│   ├── LoginForm/                 # User authentication
+│   ├── Products/                  # Products listing page
+│   ├── ProductCard/               # Individual product card
+│   ├── ProductItemDetails/        # Detailed product view
+│   ├── Cart/                      # Shopping cart page
+│   ├── CartItem/                  # Individual cart item
+│   ├── CartSummary/               # Cart total and checkout
+│   ├── AllProductsSection/        # All products with filters
+│   ├── PrimeDealsSection/         # Prime exclusive deals
+│   ├── FiltersGroup/              # Product filtering options
+│   ├── ProtectedRoute/            # Protected route wrapper
+│   ├── NotFound/                  # 404 page
+│   └── EmptyCartView/             # Empty cart message
+├── context/
+│   └── CartContext.js             # Cart state management
+├── App.js                         # Main app component
+├── App.css                        # App styles
+├── index.js                       # Entry point
+└── index.css                      # Global styles
+```
 
-### `npm run eject`
+## User Credentials
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Prime User
+- **Username:** rahul
+- **Password:** rahul@2021
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Non-Prime User
+- **Username:** raja
+- **Password:** raja@2021
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Key Components
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Header
+Navigation bar with logo, links to different sections, and logout functionality.
 
-## Learn More
+### Products
+Main products page with filtering options:
+- Category filters (Clothing, Electronics, Appliances, Grocery, Toys)
+- Price range filters
+- Rating filters
+- Sort options (Price High to Low, Price Low to High)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Cart Management
+- Add/remove items from cart
+- Increment/decrement quantities
+- View cart summary with total price
+- Clear entire cart
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Product Details
+- Comprehensive product information
+- Brand and availability details
+- Customer ratings and reviews
+- Similar products recommendations
+- Add to cart with quantity selection
 
-### Code Splitting
+## Authentication Flow
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+1. User logs in with credentials
+2. Server returns JWT token
+3. Token is stored in cookies
+4. Protected routes check for valid token
+5. Unauthorized users are redirected to login
 
-### Analyzing the Bundle Size
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- `POST https://apis.ccbp.in/login` - User login
+- `GET https://apis.ccbp.in/products` - Get all products
+- `GET https://apis.ccbp.in/products/:id` - Get product details
+- `GET https://apis.ccbp.in/prime-deals` - Get prime exclusive deals
 
-### Making a Progressive Web App
+## State Management
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+The app uses React Context API for managing cart state globally. Cart operations include:
+- Add cart item
+- Remove cart item
+- Increment/decrement cart item quantity
+- Remove all cart items
 
-### Advanced Configuration
+## Future Enhancements
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- Payment gateway integration
+- User profile management
+- Order history
+- Wishlist functionality
+- Product reviews and ratings
+- Search functionality
+- Discount coupon codes
+- Multiple payment methods
 
-### Deployment
+## Browser Support
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+- Chrome (latest)
+- Firefox (latest)
+- Safari (latest)
+- Edge (latest)
 
-### `npm run build` fails to minify
+## License
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+This project is licensed under the MIT License.
+
+## Support
+
+For issues or questions, please contact the development team or create an issue in the repository.
+
+---
+
+**Happy Shopping with Nxt Trendz!** 🛍️
