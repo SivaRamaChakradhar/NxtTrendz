@@ -28,7 +28,7 @@ Nxt Trendz is a modern React-based e-commerce application that allows users to b
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/SivaRamaChakradhar/NxtTrendz/
 cd nxt-trendz
 ```
 
